@@ -1,4 +1,3 @@
-import React from "react";
 import HeaderLi from "./HeaderLi";
 import "../css/header.css";
 

@@ -1,5 +1,3 @@
-import React from "react";
-
 function ImgHome({ link, clase }) {
   console.log(clase);
   return (

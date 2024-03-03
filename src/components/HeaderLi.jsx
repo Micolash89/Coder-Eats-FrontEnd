@@ -1,5 +1,4 @@
 import parse from "html-react-parser";
-import React from "react";
 
 function HeaderLi({ content }) {
   return (
