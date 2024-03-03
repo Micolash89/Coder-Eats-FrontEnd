@@ -1,0 +1,22 @@
+.header {
+  padding: 20px 50px;
+}
+
+.navegacion {
+  justify-content: space-between;
+  color: var(--light-gold-100);
+}
+
+.menuBar__item--a,
+.logo__a--span {
+  color: var(--light-gold-100);
+  font-weight: 500;
+}
+
+.logo__a--icon {
+  color: var(--light-bg-icon);
+}
+
+.menuBar__list {
+  gap: 150px;
+}
