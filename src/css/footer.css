@@ -1,0 +1,17 @@
+.footer {
+  justify-content: space-between;
+  background-color: var(--dark-bg-footer);
+  margin-top: 50px;
+  padding: 40px 50px 80px;
+  color: var(--light-gold-100);
+  height: 100%;
+}
+
+.footer__nav--ul {
+  gap: 2rem;
+}
+
+.nav__a--icon {
+  font-size: var(--txt-4);
+  color: var(--light-gold-100);
+}

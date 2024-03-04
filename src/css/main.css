@@ -43,6 +43,10 @@
   cursor: pointer;
 }
 
+.home__comenzar {
+  align-self: center;
+}
+
 .home__container2 {
   position: relative;
   border: 3px var(--light-gold-100) dashed;

@@ -1,12 +1,13 @@
 import parse from "html-react-parser";
+import { Link } from "react-router-dom";
 
-function HeaderLi({ content }) {
+function HeaderLi({ content, linkTo }) {
   return (
     <>
       <li className="menuBar__item">
-        <a className="menuBar__item--a" href="">
+        <Link className="menuBar__item--a" to={linkTo}>
           {parse(content)}
-        </a>
+        </Link>
       </li>
     </>
   );

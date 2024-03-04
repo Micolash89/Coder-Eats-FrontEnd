@@ -4,5 +4,11 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Deploy
+
+- [link deploy](https://micolash89.github.io/Coder-Eats-FrontEnd/) - Github Pages
+
+## Modelos Figma
+
+- [Figma Home](<https://www.figma.com/file/8nPqZxLCUQuZpvUqvXHwQN/Food-animation-webpage-design-(Community)-(Copy)?type=design&node-id=0-1&mode=design&t=u1LNCIvje7TklY0Q-0>) - Github Pages
+- [Figma Menu](<https://www.figma.com/file/ie6ug8nBfNj2cXLhbfghLY/Restaurant-Website-(Shop)-(Community)-(Copy)?type=design&node-id=0-1&mode=design&t=AfOFUgVrd5de95AX-0>) - Github Pages

@@ -2,6 +2,7 @@ import "../css/main.css";
 import Ellipse5 from "../images/Ellipse5.png";
 import Ellipse3 from "../images/Ellipse3.png";
 import ImgHome from "./imgHome";
+import { Link } from "react-router-dom";
 
 function Main() {
   const vec = [
@@ -29,7 +30,9 @@ function Main() {
                 explicabo consequatur impedit ad!
               </p>
             </div>
-            <button className="home__button">Comenzar!</button>
+            <Link className="home__comenzar" to={"/Coder-Eats-FrontEnd/menu"}>
+              <button className="home__button">Comenzar!</button>
+            </Link>
           </div>
 
           <div className="home__container2">
@@ -42,42 +45,6 @@ function Main() {
             ))}
 
             <ImgHome clase="home__container9--img img" link={Ellipse3} />
-
-            {/* <img
-              className="home__container2--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            />
-            <img
-              className="home__container3--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            />
-            <img
-              className="home__container4--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            />
-            <img
-              className="home__container5--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            />
-            <img
-              className="home__container6--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            />
-            <img
-              className="home__container7--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            />
-            <img
-              className="home__container8--img img"
-              src="./images/Ellipse 5.png"
-              alt="food_img"
-            /> */}
           </div>
         </section>
       </main>

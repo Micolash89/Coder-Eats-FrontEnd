@@ -1,12 +1,13 @@
 import HeaderLi from "./HeaderLi";
 import "../css/header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   const vec = [
-    "BreakFast",
-    "Lunch",
-    "Dinner",
-    '<i className="ri-git-repository-private-line"></i>login',
+    { name: "Menu", linkTo: "/Coder-Eats-FrontEnd/menu" },
+    { name: "Restaurant", linkTo: "/Coder-Eats-FrontEnd/restaurant" },
+    { name: "user", linkTo: "/Coder-Eats-FrontEnd/" },
+    { name: "order", linkTo: "/Coder-Eats-FrontEnd/" },
   ];
 
   return (
@@ -14,36 +15,20 @@ function Header() {
       <header className="header">
         <nav className="navegacion flexrow">
           <div className="logo">
-            <a href="" className="logo__a">
+            <Link to="/Coder-Eats-FrontEnd/" className="logo__a">
               <i className="ri-bowl-fill logo__a--icon"></i>
               <span className="logo__a--span">Soul Foul</span>
-            </a>
+            </Link>
           </div>
           <div className="menuBar">
             <ul className="menuBar__list flexrow">
               {vec.map((item, index) => (
-                <HeaderLi key={`${index} ${item}`} content={item} />
+                <HeaderLi
+                  key={`${index} ${item.name}`}
+                  content={item.name}
+                  linkTo={item.linkTo}
+                />
               ))}
-              {/* <li className="menuBar__item">
-                <a className="menuBar__item--a" href="">
-                  BreakFast
-                </a>
-              </li>
-              <li className="menuBar__item">
-                <a className="menuBar__item--a" href="">
-                  Lunch
-                </a>
-              </li>
-              <li className="menuBar__item">
-                <a className="menuBar__item--a" href="">
-                  Dinner
-                </a>
-              </li>
-              <li className="menuBar__item">
-                <a className="menuBar__item--a" href="">
-                  <i className="ri-git-repository-private-line"></i>login
-                </a>
-              </li> */}
             </ul>
           </div>
         </nav>
