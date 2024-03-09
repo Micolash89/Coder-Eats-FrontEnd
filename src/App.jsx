@@ -9,6 +9,7 @@ import "./css/estilosGenericos.css";
 import "./css/variables.css";
 import Menu from "./components/Menu";
 import Business from "./components/Business";
+import User from "./components/User";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="" element={<Main />} />
           <Route path="menu" element={<Menu />} />
           <Route path="restaurant" element={<Business />} />
+          <Route path="user" element={<User />} />
           {/* <Route path="*" element={<Main />} /> */}
         </Route>
       </Routes>

@@ -1,10 +1,10 @@
 .containerForm {
   /* justify-content: center;
-  align-items: center; */
+    align-items: center; */
   padding: 0px 0 25px 0;
 }
 
-.businessTitle {
+.userTitle {
   font-size: var(--txt-5);
   text-align: left;
   margin-left: 60px;
@@ -15,7 +15,7 @@
   font-weight: 400;
 }
 
-.product__form,
+.user__form,
 .form {
   gap: 0.5rem;
 }
@@ -27,7 +27,7 @@
 }
 
 .form,
-.button__product {
+.button__user {
   padding-left: 75px;
 }
 
@@ -49,7 +49,7 @@
   border-right: 1px solid var(--dark-black-100);
 }
 
-.productLabel,
+.userLabel,
 .form__label {
   padding: 5px 0;
   display: flex;
@@ -71,7 +71,7 @@
   color: var(--dark-bg-footer);
 }
 
-.button__product--button {
+.button__user--button {
   margin: 10px 0;
   width: max-content;
   align-self: center;
@@ -84,25 +84,16 @@
   cursor: pointer;
 }
 
-.button__product--button:hover {
+.button__user--button:hover {
   background-color: var(--light-gold-200);
   color: var(--dark-black-200);
 }
 
-.button__product--button:disabled {
+.button__user--button:disabled {
   background-color: var(--dark-bg-footer);
-}
-
-/*img*/
-.imgPrewiev {
-  width: 75%;
-
-  position: absolute;
-  right: -25%;
-  border-radius: var(--radius-2);
 }
 
 /*footer*/
 .footer {
-  margin-top: 0;
+  margin-top: 50px;
 }

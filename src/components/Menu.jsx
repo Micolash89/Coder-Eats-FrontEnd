@@ -4,7 +4,7 @@ import MenuCard from "./MenuCard";
 
 function Menu() {
   const [menu, setmenu] = useState();
-  const [restaurant, setRestaurant] = useState(0);
+  // const [restaurant, setRestaurant] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:8080/api/business")

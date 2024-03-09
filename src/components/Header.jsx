@@ -6,7 +6,7 @@ function Header() {
   const vec = [
     { name: "Menu", linkTo: "/Coder-Eats-FrontEnd/menu" },
     { name: "Restaurant", linkTo: "/Coder-Eats-FrontEnd/restaurant" },
-    { name: "user", linkTo: "/Coder-Eats-FrontEnd/" },
+    { name: "user", linkTo: "/Coder-Eats-FrontEnd/user" },
     { name: "order", linkTo: "/Coder-Eats-FrontEnd/" },
   ];
 
