@@ -11,6 +11,8 @@
   --light-white-300: #ececec;
 
   --light-gold-100: #a88787;
+  --light-gold-200: #b9a0a0;
+
   --light-bg-button: #e6e9eb;
   --light-bg-icon: #0b1b28;
   --dark-bg-footer: #506271;
@@ -26,5 +28,6 @@
   --txt-4: 1.5rem; /*24px*/
   --txt-5: 3rem; /*48px*/
   --txt-6: 1.125rem; /*18px*/
-  --txt-7: 0.875; /*14px*/
+  --txt-7: 0.875rem; /*14px*/
+  --txt-8: 0.75rem; /*10px*/
 }
