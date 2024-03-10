@@ -2,6 +2,7 @@
   --dark-black-100: #000000;
   --dark-black-200: #202020;
   --dark-black-300: #2020209f;
+  --dark-black-400: #20202041;
 
   --light-gray-100: #9d9d9d;
   --light-gray-200: #959595;
@@ -9,6 +10,8 @@
   --light-white-100: #ffffff;
   --light-white-200: #dedede;
   --light-white-300: #ececec;
+
+  --light-green-100: #57ce53;
 
   --light-gold-100: #a88787;
   --light-gold-200: #b9a0a0;
