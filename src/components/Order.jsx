@@ -48,26 +48,32 @@ function Order() {
     <>
       <div className="containerForm flexcolum ">
         <h2 className="userTitle"> User</h2>
-        <div className="form flexcolum ">
-          <label className="form__label">
+        <div className="form flexcolum select-container">
+          <label className="form__label ">
             <select
               value={idUsers}
               onChange={(e) => setIdUsers(e.target.value)}
               name=""
               id=""
+              className="select-box"
             >
-              <option value="">Seleccione un Usuario</option>;
+              <option className="" value="" disabled={true} hidden={true}>
+                Seleccione un Usuario
+              </option>
+              ;
               {users &&
                 users.map((user, index) => {
                   return (
-                    <option value={user._id} key={index}>
+                    <option className="" value={user._id} key={index}>
                       {user.name}
                     </option>
                   );
                 })}
             </select>
 
-            <span className="form__input--span"></span>
+            {/* <div className="icon-container">
+              <i className="ri-arrow-down-s-fill"></i>
+            </div> */}
           </label>
 
           <label className="userLabel">
@@ -80,7 +86,9 @@ function Order() {
               name=""
               id=""
             >
-              <option value="">Seleccione un negocio</option>
+              <option value="" disabled={true} hidden={true}>
+                Seleccione un negocio
+              </option>
               {business &&
                 business.map((bussine, index) => {
                   return (
@@ -91,7 +99,9 @@ function Order() {
                 })}
             </select>
 
-            <span className="form__input--span"></span>
+            {/* <div className="icon-container">
+              <i className="ri-arrow-down-s-fill"></i>
+            </div> */}
           </label>
 
           <div className="menuList flexcolum">

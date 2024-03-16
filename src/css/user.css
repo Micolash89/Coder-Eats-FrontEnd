@@ -91,6 +91,7 @@
 
 .button__user--button:disabled {
   background-color: var(--dark-bg-footer);
+  cursor: not-allowed;
 }
 
 /*footer*/

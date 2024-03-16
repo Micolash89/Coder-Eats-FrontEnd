@@ -10,13 +10,12 @@ function MenuCardOrder({
 
   useEffect(() => {
     setIsChecked(false);
-    console.log(isChecked);
   }, [idBusiness]);
-
-  console.log(idBusiness);
 
   function handleCheck(elementId) {
     if (!elementId) return;
+
+    elementId = parseInt(elementId);
 
     let arr = [...idProducts];
 
@@ -24,13 +23,11 @@ function MenuCardOrder({
       arr = arr.filter((x) => x != elementId);
       setIsChecked(false);
     } else {
-      arr.push(parseInt(elementId));
       setIsChecked(true);
+      arr.push(parseInt(elementId));
     }
 
-    //console.log(isChecked);
     setIdProducts(arr);
-    console.log(idProducts);
   }
 
   return (
