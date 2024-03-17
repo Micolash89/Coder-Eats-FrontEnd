@@ -85,6 +85,7 @@ function Order() {
               }}
               name=""
               id=""
+              className="select-box"
             >
               <option value="" disabled={true} hidden={true}>
                 Seleccione un negocio
