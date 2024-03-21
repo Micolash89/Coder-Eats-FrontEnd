@@ -10,7 +10,7 @@ function Order() {
   const [business, setBusiness] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/business")
+    fetch("https://micolash89.github.io/api/business")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.result);
@@ -19,7 +19,7 @@ function Order() {
       })
       .catch((error) => console.error(error));
 
-    fetch("http://localhost:8080/api/users")
+    fetch("https://micolash89.github.io/api/users")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.result);
@@ -30,7 +30,7 @@ function Order() {
   }, []);
 
   function postBussines() {
-    fetch("http://localhost:8080/api/orders", {
+    fetch("https://micolash89.github.io/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -7,7 +7,7 @@ function User() {
   const [role, setRole] = useState("");
 
   const postUser = () => {
-    fetch("http://localHost:8080/api/users", {
+    fetch("https://micolash89.github.io/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, role, orders: [] }),

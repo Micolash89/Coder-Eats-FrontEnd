@@ -9,7 +9,7 @@ function Business() {
   const [url, setUrl] = useState("");
 
   const postBusiness = () => {
-    fetch("http://localHost:8080/api/business", {
+    fetch("https://micolash89.github.io/api/business", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, products: [{ id, product, price, url }] }),
