@@ -9,7 +9,7 @@ function Business() {
   const [url, setUrl] = useState("");
 
   const postBusiness = () => {
-    fetch("https://micolash89.github.io/api/business", {
+    fetch("https://codereats-backend-production.up.railway.app/api/business", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, products: [{ id, product, price, url }] }),
