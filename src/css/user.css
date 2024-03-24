@@ -40,7 +40,8 @@
 }
 
 .form__input:valid ~ span,
-.form__select:focus ~ span {
+.form__select:focus ~ span,
+.form__input:focus ~ span {
   transform: translateX(0) translateY(-23px);
   font-size: var(--txt-8);
   background-color: var(--light-white-100);
@@ -97,4 +98,10 @@
 /*footer*/
 .footer {
   margin-top: 50px;
+}
+
+/*user*/
+.order__h3 {
+  margin-top: 15px;
+  font-weight: 500;
 }

@@ -39,7 +39,7 @@
   border-radius: var(--radius-3);
 }
 
-.form__input:valid ~ span,
+/* .form__input:valid ~ span,
 .form__select:focus ~ span {
   transform: translateX(0) translateY(-23px);
   font-size: var(--txt-8);
@@ -47,7 +47,7 @@
   padding: 0 3px;
   border-left: 1px solid var(--dark-black-100);
   border-right: 1px solid var(--dark-black-100);
-}
+} */
 
 .productLabel,
 .form__label {
@@ -91,6 +91,7 @@
 
 .button__product--button:disabled {
   background-color: var(--dark-bg-footer);
+  cursor: not-allowed;
 }
 
 /*img*/

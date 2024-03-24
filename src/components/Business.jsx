@@ -9,7 +9,8 @@ function Business() {
   const [url, setUrl] = useState("");
 
   const postBusiness = () => {
-    fetch("https://codereats-backend-production.up.railway.app/api/business", {
+    //fetch("http://localhost:8080/api/business", {
+    fetch("http://localhost:8080/api/business", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, products: [{ id, product, price, url }] }),

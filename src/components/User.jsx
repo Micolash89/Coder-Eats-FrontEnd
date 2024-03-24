@@ -1,20 +1,39 @@
 import { useState } from "react";
 import "../css/user.css";
+import Error from "./Error";
+import Loader from "./Loader";
 
 function User() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
 
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  /*new user*/
+  const [newUser, setNewUser] = useState(false);
+
   const postUser = () => {
-    fetch("https://codereats-backend-production.up.railway.app/api/users", {
+    setLoading(true);
+    fetch("http://localhost:8080/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, role, orders: [] }),
     })
       .then((response) => response.json())
-      .then((data) => console.log("Data", data))
-      .catch((error) => console.error("Error:", error));
+      .then((data) => {
+        console.log("Data", data);
+        setNewUser(data.result);
+        setError(false);
+      })
+      .catch((error) => {
+        setError(true);
+        console.error("Error:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -52,16 +71,25 @@ function User() {
             <span className="form__input--span">role</span>
           </label>
         </div>
-      </div>
-
-      <div className="button__user">
-        <button
-          disabled={name === "" || email === "" || role === ""}
-          className="button__user--button"
-          onClick={postUser}
-        >
-          Enviar
-        </button>
+        <div className="button__user">
+          <button
+            disabled={name === "" || email === "" || role === ""}
+            className="button__user--button"
+            onClick={postUser}
+          >
+            Enviar
+          </button>
+        </div>
+        {newUser && (
+          <div className="order">
+            <h3 className="order__h3">Nuevo usuario</h3>
+            <span className="order__span">Nombre: {newUser.name}</span>
+            <span className="order__span">Email: {newUser.email}</span>
+            <span className="order__span">Role: {newUser.role}</span>
+          </div>
+        )}
+        {loading && <Loader />}
+        {error && <Error />}
       </div>
     </>
   );

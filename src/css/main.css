@@ -43,6 +43,11 @@
   cursor: pointer;
 }
 
+.home__button:hover {
+  background-color: var(--dark-bg-footer);
+  color: var(--light-white-100);
+}
+
 .home__comenzar {
   align-self: center;
 }

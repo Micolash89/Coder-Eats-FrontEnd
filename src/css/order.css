@@ -108,3 +108,23 @@
 option:checked {
   background-color: var(--dark-bg-footer);
 }
+
+/*order description*/
+.order {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-left: 75px;
+  margin-top: 15px;
+  gap: 15px;
+  border-top: 3px solid var(--light-gold-100);
+  width: 45%;
+}
+
+.order__span::before {
+  content: "• ";
+}
+
+.order__span:first-child {
+  margin-top: 15px;
+}

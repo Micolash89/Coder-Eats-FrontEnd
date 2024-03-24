@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import MenuCardOrder from "./MenuCardOrder";
 import "../css/order.css";
+import Loader from "./Loader";
+import Error from "./Error";
 
 function Order() {
   const [idBusiness, setIdBusiness] = useState("");
@@ -8,29 +10,36 @@ function Order() {
   const [idProducts, setIdProducts] = useState([]);
   const [users, setUsers] = useState();
   const [business, setBusiness] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  /*order*/
+  const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    fetch("https://codereats-backend-production.up.railway.app/api/business")
+    fetch("http://localhost:8080/api/business")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.result);
         setBusiness(data.result);
-        //users = data.result;
+        setLoading(false);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setError(true);
+      });
 
-    fetch("https://codereats-backend-production.up.railway.app/api/users")
+    fetch("http://localhost:8080/api/users")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.result);
         setUsers(data.result);
-        //business = data.result;
       })
       .catch((error) => console.error(error));
   }, []);
 
   function postBussines() {
-    fetch("https://codereats-backend-production.up.railway.app/api/orders", {
+    setLoading(true);
+    setOrder(false);
+    fetch("http://localhost:8080/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -40,8 +49,18 @@ function Order() {
       }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+      .then((data) => {
+        console.log(data);
+        setOrder(data.result);
+        setError(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(true);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
@@ -123,18 +142,31 @@ function Order() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="button__user">
-        <button
-          disabled={
-            idBusiness === "" || idUsers === "" || idProducts.length === 0
-          }
-          className="button__user--button"
-          onClick={postBussines}
-        >
-          Enviar
-        </button>
+        <div className="button__user">
+          <button
+            disabled={
+              idBusiness === "" || idUsers === "" || idProducts.length === 0
+            }
+            className="button__user--button"
+            onClick={postBussines}
+          >
+            Enviar
+          </button>
+        </div>
+        {loading && <Loader />}
+        {order && (
+          <div className="order">
+            <span className="order__span">N° Orden: {order.number}</span>
+            <span className="order__span">Negocio: {order.business}</span>
+            <span className="order__span">usuario: {order.user}</span>
+            <span className="order__span">estado: {order.status}</span>
+            <span className="order__span">
+              productos: {order.products.join(", ")}
+            </span>
+            <span className="order__span">total: $ {order.totalPrice}</span>
+          </div>
+        )}
+        {error && <Error />}
       </div>
     </>
   );
