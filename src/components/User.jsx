@@ -16,7 +16,7 @@ function User() {
 
   const postUser = () => {
     setLoading(true);
-    fetch("http://localhost:8080/api/users", {
+    fetch("https://codereats-backend-1.onrender.com/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, role, orders: [] }),

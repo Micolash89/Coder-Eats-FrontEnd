@@ -17,7 +17,7 @@ function Order() {
   const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/business")
+    fetch("https://codereats-backend-1.onrender.com/api/business")
       .then((response) => response.json())
       .then((data) => {
         setBusiness(data.result);
@@ -28,7 +28,7 @@ function Order() {
         setError(true);
       });
 
-    fetch("http://localhost:8080/api/users")
+    fetch("https://codereats-backend-1.onrender.com/api/users")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.result);
@@ -39,7 +39,7 @@ function Order() {
   function postBussines() {
     setLoading(true);
     setOrder(false);
-    fetch("http://localhost:8080/api/orders", {
+    fetch("https://codereats-backend-1.onrender.com/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
