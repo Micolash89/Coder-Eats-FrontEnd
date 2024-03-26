@@ -4,7 +4,7 @@ import Ellipse3 from "../images/Ellipse3.png";
 import ImgHome from "./imgHome";
 import { Link } from "react-router-dom";
 
-function Main() {
+function Home() {
   const vec = [
     Ellipse5,
     Ellipse5,
@@ -52,4 +52,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;

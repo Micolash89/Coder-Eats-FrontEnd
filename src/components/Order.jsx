@@ -22,6 +22,7 @@ function Order() {
       .then((data) => {
         setBusiness(data.result);
         setLoading(false);
+        setError(false);
       })
       .catch((error) => {
         console.error(error);
@@ -32,8 +33,13 @@ function Order() {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.result);
+        setLoading(false);
+        setError(false);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setError(true);
+      });
   }, []);
 
   function postBussines() {
@@ -52,6 +58,7 @@ function Order() {
       .then((data) => {
         console.log(data);
         setOrder(data.result);
+        setLoading(false);
         setError(false);
       })
       .catch((error) => {
