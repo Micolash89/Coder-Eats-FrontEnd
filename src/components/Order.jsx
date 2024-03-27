@@ -17,7 +17,7 @@ function Order() {
   const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    fetch(`${END_POINTS.DEV}/api/business`)
+    fetch(`${END_POINTS.PROD}/api/business`)
       .then((response) => response.json())
       .then((data) => {
         setBusiness(data.result);
@@ -29,7 +29,7 @@ function Order() {
         setError(true);
       });
 
-    fetch(`${END_POINTS.DEV}/api/users`)
+    fetch(`${END_POINTS.PROD}/api/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.result);
@@ -45,7 +45,7 @@ function Order() {
   function postBussines() {
     setLoading(true);
     setOrder(false);
-    fetch(`${END_POINTS.DEV}/api/orders`, {
+    fetch(`${END_POINTS.PROD}/api/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

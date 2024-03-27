@@ -10,7 +10,7 @@ function Menu() {
   // const [restaurant, setRestaurant] = useState(0);
 
   useEffect(() => {
-    fetch(`${END_POINTS.DEV}/api/business`)
+    fetch(`${END_POINTS.PROD}/api/business`)
       .then((respose) => respose.json())
       .then((data) => {
         setmenu(data.result);

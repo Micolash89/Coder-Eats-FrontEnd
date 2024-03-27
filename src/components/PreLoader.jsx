@@ -9,7 +9,7 @@ function PreLoader() {
   let cont = 0;
 
   function fetchRetry() {
-    fetch(`${END_POINTS.DEV}/api/users`)
+    fetch(`${END_POINTS.PROD}/api/users`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -29,7 +29,7 @@ function PreLoader() {
   }
 
   useEffect(() => {
-    fetch(`${END_POINTS.DEV}/api/users`)
+    fetch(`${END_POINTS.PROD}/api/users`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

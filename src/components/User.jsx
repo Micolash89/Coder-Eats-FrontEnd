@@ -16,7 +16,7 @@ function User() {
 
   const postUser = () => {
     setLoading(true);
-    fetch(`${END_POINTS.DEV}/api/users`, {
+    fetch(`${END_POINTS.PROD}/api/users`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, role, orders: [] }),

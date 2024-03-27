@@ -10,8 +10,8 @@ function Business() {
   const [url, setUrl] = useState("");
 
   const postBusiness = () => {
-    //fetch("END_POINTS.DEV/api/business", {
-    fetch(`${END_POINTS.DEV}/api/business`, {
+    //fetch("END_POINTS.PROD/api/business", {
+    fetch(`${END_POINTS.PROD}/api/business`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, products: [{ id, product, price, url }] }),
