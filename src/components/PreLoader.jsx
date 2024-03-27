@@ -5,6 +5,7 @@ import Error from "./Error";
 function PreLoader() {
   const [display, setDisplay] = useState(false);
   const [error, setError] = useState(false);
+  const [progress, setProgress] = useState(0);
   let cont = 0;
 
   function fetchRetry() {
@@ -40,6 +41,14 @@ function PreLoader() {
       });
   }, []);
 
+  setInterval(() => {
+    if (progress == 100) {
+      clearInterval();
+    } else {
+      setProgress(progress + 1);
+    }
+  }, 1000);
+
   return (
     <div
       className={`containerPreLoader ${display ? "ocultar" : ""} `}
@@ -53,6 +62,7 @@ function PreLoader() {
           <div className="line"></div>
         </div>
       </div>
+      <div className="numb">{progress}%</div>
       {error && <Error />}
     </div>
   );

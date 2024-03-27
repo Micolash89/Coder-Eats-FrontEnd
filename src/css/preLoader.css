@@ -55,3 +55,7 @@
 .ocultar {
   display: none;
 }
+
+.numb {
+  font-size: var(--txt-4);
+}
