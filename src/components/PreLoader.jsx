@@ -5,6 +5,7 @@ import Error from "./Error";
 function PreLoader() {
   const [display, setDisplay] = useState(false);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(0);
   let cont = 0;
 
   function fetchRetry() {
@@ -40,6 +41,12 @@ function PreLoader() {
       });
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      loading < 100 && !display ? setLoading(loading + 1) : "";
+    }, 600);
+  }, [loading]);
+
   return (
     <div
       className={`containerPreLoader ${display ? "ocultar" : ""} `}
@@ -53,6 +60,7 @@ function PreLoader() {
           <div className="line"></div>
         </div>
       </div>
+      <div className="numb">{loading}%</div>
       {error && <Error />}
     </div>
   );
