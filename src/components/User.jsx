@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../css/user.css";
 import Error from "./Error";
 import Loader from "./Loader";
-
+import { END_POINTS } from "./EndPoints.Constantes";
 function User() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ function User() {
 
   const postUser = () => {
     setLoading(true);
-    fetch("https://codereats-backend-1.onrender.com/api/users", {
+    fetch(`${END_POINTS.DEV}/api/users`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, role, orders: [] }),

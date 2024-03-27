@@ -73,3 +73,9 @@
   text-align: center;
   font-weight: 700;
 }
+
+.load {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}

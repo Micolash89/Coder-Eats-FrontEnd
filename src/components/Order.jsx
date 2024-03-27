@@ -3,7 +3,7 @@ import MenuCardOrder from "./MenuCardOrder";
 import "../css/order.css";
 import Loader from "./Loader";
 import Error from "./Error";
-
+import { END_POINTS } from "./EndPoints.Constantes";
 function Order() {
   const [idBusiness, setIdBusiness] = useState("");
   const [idUsers, setIdUsers] = useState("");
@@ -17,7 +17,7 @@ function Order() {
   const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    fetch("https://codereats-backend-1.onrender.com/api/business")
+    fetch(`${END_POINTS.DEV}/api/business`)
       .then((response) => response.json())
       .then((data) => {
         setBusiness(data.result);
@@ -29,7 +29,7 @@ function Order() {
         setError(true);
       });
 
-    fetch("https://codereats-backend-1.onrender.com/api/users")
+    fetch(`${END_POINTS.DEV}/api/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.result);
@@ -45,7 +45,7 @@ function Order() {
   function postBussines() {
     setLoading(true);
     setOrder(false);
-    fetch("https://codereats-backend-1.onrender.com/api/orders", {
+    fetch(`${END_POINTS.DEV}/api/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

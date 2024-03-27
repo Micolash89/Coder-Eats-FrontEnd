@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/business.css";
+import { END_POINTS } from "./EndPoints.Constantes";
 
 function Business() {
   const [name, setBusinessName] = useState("");
@@ -9,8 +10,8 @@ function Business() {
   const [url, setUrl] = useState("");
 
   const postBusiness = () => {
-    //fetch("https://codereats-backend-1.onrender.com/api/business", {
-    fetch("https://codereats-backend-1.onrender.com/api/business", {
+    //fetch("END_POINTS.DEV/api/business", {
+    fetch(`${END_POINTS.DEV}/api/business`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, products: [{ id, product, price, url }] }),

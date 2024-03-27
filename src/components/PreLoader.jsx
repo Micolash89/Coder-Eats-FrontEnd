@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../css/preLoader.css";
 import Error from "./Error";
-
+import { END_POINTS } from "./EndPoints.Constantes";
 function PreLoader() {
   const [display, setDisplay] = useState(false);
   const [error, setError] = useState(false);
@@ -9,7 +9,7 @@ function PreLoader() {
   let cont = 0;
 
   function fetchRetry() {
-    fetch("https://codereats-backend-1.onrender.com/api/users")
+    fetch(`${END_POINTS.DEV}/api/users`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -29,7 +29,7 @@ function PreLoader() {
   }
 
   useEffect(() => {
-    fetch("https://codereats-backend-1.onrender.com/api/users")
+    fetch(`${END_POINTS.DEV}/api/users`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
