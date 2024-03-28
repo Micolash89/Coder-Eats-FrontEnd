@@ -1,6 +1,7 @@
 import HeaderLi from "./HeaderLi";
 import "../css/header.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
   const vec = [
@@ -9,6 +10,9 @@ function Header() {
     { name: "user", linkTo: "/Coder-Eats-FrontEnd/user" },
     { name: "order", linkTo: "/Coder-Eats-FrontEnd/order" },
   ];
+
+  const [showMenu, setShowMenu] = useState(false);
+  const [showButton, setShowButton] = useState(true);
 
   return (
     <>
@@ -21,7 +25,21 @@ function Header() {
             </Link>
           </div>
           <div className="menuBar">
-            <ul className="menuBar__list flexrow">
+            <ul
+              className={`menuBar__list flexrow ${
+                showMenu ? "showMenu" : "hiddeMenu"
+              }`}
+            >
+              <li
+                className="menuBar__item"
+                onClick={() => {
+                  setShowButton(true);
+                  setShowMenu(false);
+                }}
+              >
+                <i className="ri-close-line"></i>
+              </li>
+
               {vec.map((item, index) => (
                 <HeaderLi
                   key={`${index} ${item.name}`}
@@ -30,6 +48,17 @@ function Header() {
                 />
               ))}
             </ul>
+          </div>
+          <div
+            className={`menuHeader ${
+              showButton ? "showButton" : "hiddeButton"
+            }`}
+            onClick={() => {
+              setShowButton(false);
+              setShowMenu(true);
+            }}
+          >
+            <i className="ri-menu-line"></i>
           </div>
         </nav>
       </header>
